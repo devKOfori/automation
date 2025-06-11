@@ -6,6 +6,7 @@ best_models_dir = dest_dir / "best_modesl"
 final_models_dir = dest_dir / "final_models"
 models_performance_dir = dest_dir / "model_performance"
 resnet18_fold_files = p.glob("resnet18_fold_*.pth")
+
 for file in resnet18_fold_files:
     new_name = file.name.replace("resnet18", "efficientnetB0")
     if "best" in file.name:
@@ -17,5 +18,3 @@ for file in resnet18_fold_files:
     else:
         print(f"File {file.name} does not match any expected patterns.")
         continue
-
-    
